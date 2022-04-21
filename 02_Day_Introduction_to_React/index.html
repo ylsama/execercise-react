@@ -22,7 +22,7 @@
                 <h1>{welcome}</h1>
                 <h2>{title}</h2>
                 <h3>{subtitle}</h3>
-                <p>From {authorFirstName} {authorLastName} with love</p>
+                <p>From {author.firstName} {author.lastName} with love</p>
                 <small>Date: {date}</small>
             </header>
         );
@@ -36,15 +36,14 @@
             <main>
                 {title}
                 <p>Prerequisite to get started react.js:</p>
-                <ul>{techs}</ul>
+                <ul>{techs.map((tech, index) => <li key={index}>{tech}</li>)}</ul>
                 {inputField}
-
             </main>
         );
 
         const footer = (
             <footer>
-                <p>Copyright 2020</p>
+                <p>{copyright}</p>
             </footer>
         );
 
