@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="root"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const style = { border: '2px solid orange', color: 'black', fontSize: '18px' }
+
+        const rootElement = document.querySelector('.root')
+        const jsxElement = <p>I am a JSX element</p>;
+        const header = (
+            <header
+                style={{ border: '2px solid orange', color: 'black', fontSize: '18px' }}
+            >
+                <h1>Welcome to 30 Days Of React</h1>
+                <h2>Getting Started React</h2>
+                <h3>JavaScript Library</h3>
+                <p>Asabeneh Yetayeh</p>
+                <small>Oct 2, 2020</small>
+            </header>
+        );
+
+        const title = <h1 className='title'>Getting Started React</h1>
+        const inputField = (
+            <div>
+                <label htmlFor='firstname'>First Name</label>
+                <input type='text' id='firstname' placeholder='First Name' />
+            </div>
+        )
+
+
+        const main = (
+            <main>
+                {title}
+                {jsxElement}
+                <p>Prerequisite to get started react.js:</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                {inputField}
+            </main>
+        );
+
+        const footer = (
+            <footer style={style}>
+                <p>Copyright 2020</p>
+            </footer>
+        );
+
+        const app = (
+            <div>
+                {header}
+                {main}
+                {footer}
+            </div>
+        )
+        ReactDOM.render(app, rootElement)
+    </script>
+</body>
+
+</html>
