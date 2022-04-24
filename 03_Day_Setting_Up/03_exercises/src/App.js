@@ -12,11 +12,31 @@ const header = (
     <small>Date: {model.date}</small>
   </header>
 );
-const inputField = (
-  <div>
-    <label htmlFor="firstname">First Name</label>
-    <input type="text" id="firstname" placeholder="First Name" />
-  </div>
+const subcribeForm = (
+  <form className="subcribe-form">
+    <h1>{model.reciveMail}</h1>
+    <p>{model.reciveMailSubText}</p>
+    <div className="input-field">
+      <input
+        type="text"
+        id="firstname"
+        placeholder={model.firstnamePlaceholder}
+      ></input>
+      <input
+        type="text"
+        id="lastname"
+        placeholder={model.lastnamePlaceholder}
+      ></input>
+      <input type="text" id="mail" placeholder={model.emailPlaceholder}></input>
+    </div>
+    <input
+      type="button"
+      id="supscribe"
+      className="submit-button"
+      onSubmit={() => { }}
+      value={model.supscribe}
+    ></input>
+  </form>
 );
 const logo = (
   <div>
@@ -32,14 +52,16 @@ const main = (
         <li key={index}>{tech}</li>
       ))}
     </ul>
-    {inputField}
   </main>
 );
 
 const footer = (
-  <footer className="footer-wrapper">
-    <p>{model.copyright}</p>
-  </footer>
+  <div className="footer-wrapper">
+    {subcribeForm}
+    <footer >
+      <p>{model.copyright}</p>
+    </footer>
+  </div>
 );
 function App() {
   return (
