@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
+import logoImg from "./logo.svg";
 import model from "./model/model";
 import "./App.css";
 const header = (
-  <header>
+  <header className="header-wrapper">
     <h1>{model.welcome}</h1>
     <h2>{model.title}</h2>
     <h3>{model.subtitle}</h3>
@@ -18,9 +18,14 @@ const inputField = (
     <input type="text" id="firstname" placeholder="First Name" />
   </div>
 );
+const logo = (
+  <div>
+    <img src={logoImg} className="App-logo" alt="logo"></img>
+  </div>
+);
 const main = (
-  <main>
-    {model.title}
+  <main className="main-wrapper">
+    {logo}
     <p>Prerequisite to get started react.js:</p>
     <ul>
       {model.techs.map((tech, index) => (
@@ -32,7 +37,7 @@ const main = (
 );
 
 const footer = (
-  <footer>
+  <footer className="footer-wrapper">
     <p>{model.copyright}</p>
   </footer>
 );
